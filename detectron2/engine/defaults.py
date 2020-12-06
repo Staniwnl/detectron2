@@ -220,7 +220,7 @@ class DefaultPredictor:
             image = torch.as_tensor(image.astype("float32").transpose(2, 0, 1))
 
             inputs = {"image": image, "height": height, "width": width}
-            predictions = self.model([inputs])[0]
+            predictions = self.model([inputs])[0:2]
             return predictions
 
 
@@ -549,7 +549,7 @@ Alternatively, you can call evaluation functions yourself (see Colab balloon tut
                 print_csv_format(results_i)
 
         if len(results) == 1:
-            results = list(results.values())[0:2]
+            results = list(results.values())[0]
         return results
 
     @staticmethod
