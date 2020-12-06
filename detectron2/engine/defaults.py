@@ -549,7 +549,7 @@ Alternatively, you can call evaluation functions yourself (see Colab balloon tut
                 print_csv_format(results_i)
 
         if len(results) == 1:
-            results = list(results.values())[0]
+            results = list(results.values())[0:2]
         return results
 
     @staticmethod
